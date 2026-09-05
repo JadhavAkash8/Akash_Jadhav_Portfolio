@@ -106,13 +106,24 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white/60 hover:text-white transition-colors z-[110]"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
+          {/* Mobile Actions: Theme Toggle + Menu Button */}
+          <div className="flex items-center space-x-4 md:hidden z-[110]">
+            <button 
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label="Toggle Theme"
+              className="p-2 text-white/70 hover:text-white transition-colors"
+            >
+              {isDarkMode ? <FiSun size={18} className="text-amber-400" /> : <FiMoon size={18} className="text-blue-600" />}
+            </button>
+
+            <button
+              className="text-white/70 hover:text-white transition-colors p-1"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+            </button>
+          </div>
         </div>
       </nav>
 

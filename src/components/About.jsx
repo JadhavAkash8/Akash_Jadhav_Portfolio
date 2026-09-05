@@ -62,30 +62,30 @@ export default function About() {
             {/* Main Content Pane */}
             <div className="w-full lg:w-[65%] flex flex-col space-y-5 pointer-events-auto bg-black/40 backdrop-blur-sm p-6 md:p-8 border border-white/5 rounded-2xl">
                 
-                {/* Mobile Profile Avatar & Header */}
-                <div className="flex items-center gap-4 lg:hidden pb-1 border-b border-white/5">
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-blue-500/40 shrink-0 shadow-lg shadow-blue-500/10">
-                        <img 
-                            src="/images/akash-profile.png" 
-                            alt="Akash Jadhav" 
-                            className="w-full h-full object-cover" 
-                        />
-                        <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay"></div>
-                    </div>
-                    <div>
-                        <p className="text-blue-500 font-mono text-[9px] uppercase tracking-[0.4em]">SYSTEM INFO</p>
-                        <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tighter uppercase">
-                            About Me<span className="text-blue-500">.</span>
-                        </h2>
-                    </div>
-                </div>
-
-                {/* Desktop Header */}
-                <div className="space-y-1 hidden lg:block">
+                {/* Header */}
+                <div className="space-y-1">
                     <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em]">SYSTEM INFO</p>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase">
                         About Me<span className="text-blue-500">.</span>
                     </h2>
+                </div>
+
+                {/* Mobile Profile Photo - Bigger, Black & White like laptop */}
+                <div className="lg:hidden w-full flex justify-center py-2">
+                    <div className="relative w-44 h-56 sm:w-52 sm:h-64 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/60 group">
+                        <img 
+                            src="/images/akash-profile.png" 
+                            alt="Akash Jadhav" 
+                            className="w-full h-full object-cover grayscale contrast-125 brightness-95" 
+                        />
+                        {/* Subtle futuristic scanline/vignette overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+                        {/* Corner Accents */}
+                        <div className="absolute top-2 left-2 w-3 h-3 border-t border-l border-blue-500/60"></div>
+                        <div className="absolute top-2 right-2 w-3 h-3 border-t border-r border-blue-500/60"></div>
+                        <div className="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-blue-500/60"></div>
+                        <div className="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-blue-500/60"></div>
+                    </div>
                 </div>
 
                 {/* Bio Paragraph */}
