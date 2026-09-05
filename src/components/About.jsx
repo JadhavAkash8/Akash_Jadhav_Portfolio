@@ -38,13 +38,13 @@ export default function About() {
   ];
 
   return (
-    <div id="about" className="relative w-full h-screen bg-[#020202] overflow-hidden flex items-center justify-center font-sans tracking-wide py-10 px-6 md:px-12">
+    <div id="about" className="relative w-full min-h-screen lg:h-screen bg-[#020202] overflow-hidden flex items-center justify-center font-sans tracking-wide py-16 lg:py-10 px-6 md:px-12">
         
         {/* --- BG EFFECTS --- */}
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
         <div className="absolute inset-0 z-[15] pointer-events-none" style={{ background: "radial-gradient(circle at 30% 50%, transparent 20%, rgba(0,0,0,0.9) 100%)" }}></div>
 
-        {/* --- STATIC FRAME IMAGE (LEFT 45%) --- */}
+        {/* --- STATIC FRAME IMAGE (LEFT 45% on large screens) --- */}
         <div className="absolute inset-y-0 left-0 w-[45%] z-10 pointer-events-none overflow-hidden hidden lg:block" style={{ WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)', maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)' }}>
             <img 
                src="/images/akash-profile.png" 
@@ -53,16 +53,35 @@ export default function About() {
             />
         </div>
 
-        {/* --- CONTENT (RIGHT 55%) --- */}
+        {/* --- CONTENT (RIGHT 55% on desktop, full width on mobile) --- */}
         <div className="relative z-[50] w-full lg:w-[80%] flex flex-col md:flex-row items-center justify-end">
             
-            {/* Visual Gap for the face mask area */}
+            {/* Visual Gap for the face mask area on desktop */}
             <div className="hidden lg:block w-[35%] h-full"></div>
 
             {/* Main Content Pane */}
             <div className="w-full lg:w-[65%] flex flex-col space-y-5 pointer-events-auto bg-black/40 backdrop-blur-sm p-6 md:p-8 border border-white/5 rounded-2xl">
-                {/* Header */}
-                <div className="space-y-1">
+                
+                {/* Mobile Profile Avatar & Header */}
+                <div className="flex items-center gap-4 lg:hidden pb-1 border-b border-white/5">
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-blue-500/40 shrink-0 shadow-lg shadow-blue-500/10">
+                        <img 
+                            src="/images/akash-profile.png" 
+                            alt="Akash Jadhav" 
+                            className="w-full h-full object-cover" 
+                        />
+                        <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay"></div>
+                    </div>
+                    <div>
+                        <p className="text-blue-500 font-mono text-[9px] uppercase tracking-[0.4em]">SYSTEM INFO</p>
+                        <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tighter uppercase">
+                            About Me<span className="text-blue-500">.</span>
+                        </h2>
+                    </div>
+                </div>
+
+                {/* Desktop Header */}
+                <div className="space-y-1 hidden lg:block">
                     <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em]">SYSTEM INFO</p>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase">
                         About Me<span className="text-blue-500">.</span>
