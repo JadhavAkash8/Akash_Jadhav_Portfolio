@@ -110,13 +110,13 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
     };
   }, [loaded, frameIndex]);
 
-  // Final Scene Transitions
-  const opacity = useTransform(smoothProgress, [0.85, 0.95], [1, 0]);
-  const blur = useTransform(smoothProgress, [0.85, 0.95], ["blur(0px)", "blur(20px)"]);
+  // Final Scene Transitions - fade out smoothly right as frames finish
+  const opacity = useTransform(smoothProgress, [0.88, 0.98], [1, 0]);
+  const blur = useTransform(smoothProgress, [0.88, 0.98], ["blur(0px)", "blur(12px)"]);
 
   return (
-    <div ref={containerRef} id="portfolio" className="relative h-[600vh] bg-[#020202]">
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center perspective-2000">
+    <div ref={containerRef} id="laptop-animation" className="relative h-[280vh] md:h-[350vh] bg-[#020202]">
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center perspective-2000 bg-[#020202]">
         
         {/* Loading Overlay */}
         {!loaded && (

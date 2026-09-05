@@ -31,22 +31,29 @@ const projectData = [
 
 const Portfolio = () => {
   return (
-    <section id="projects" className="bg-[#020202] py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto text-center mb-20">
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-blue-500 font-mono tracking-[0.4em] uppercase text-[10px] mb-4"
-        >
-          Project Showcase
-        </motion.p>
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
+    <section id="projects" className="relative bg-[#020202] pt-28 pb-24 px-6 md:px-12 lg:px-24 scroll-mt-16 overflow-visible">
+      <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-black text-white mb-8 uppercase tracking-tighter"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-4 inline-block"
+        >
+          <span className="text-blue-500 font-mono tracking-[0.4em] uppercase text-[11px] font-semibold px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-sm inline-block">
+            Project Showcase
+          </span>
+        </motion.div>
+        <motion.h2 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter"
         >
           Selected Works<span className="text-blue-500">.</span>
         </motion.h2>
+        <div className="w-20 h-[1px] bg-blue-500/40 mx-auto"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
